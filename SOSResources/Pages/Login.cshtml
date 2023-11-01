@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SOS Resources</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SOSResources.styles.css" asp-append-version="true" />
-</head>
-
-<body> 
-    <container>
-        <p>The mission of Student Outreach Services (SOS) is to engage all segments of the Hendrix College student population by connecting with mentors, services, resources, programs, networks, interventions, and/or preventions to increase successful holistic and positive student experiences throughout their time in the Hendrix community. </p>
-    </container>
+@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Log in";
+}
+<h1>@ViewData["Title"]</h1>
+<h4>
+    Log in to view your account information or start a request
+</h4>
+<body>
+    <form>
+    <label for="userName">Username:</label><br>
+    <input type="text" id="userName" name="userName"><br>
+    <label for="lname">Password:</label><br>
+    <input type="text" id="lastName" name="lastName">
+</form>
+    <button>Log in</button>
+    <h4>or</h4>
+    <button>Create an Account</button>
 </body>
