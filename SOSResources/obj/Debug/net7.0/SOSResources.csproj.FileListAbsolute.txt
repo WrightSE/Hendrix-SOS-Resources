@@ -28,3 +28,4 @@ C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\refint
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\SOSResources.pdb
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\SOSResources.genruntimeconfig.cache
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\ref\SOSResources.dll
+c:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\scopedcss\Pages\Resources.cshtml.rz.scp.css
