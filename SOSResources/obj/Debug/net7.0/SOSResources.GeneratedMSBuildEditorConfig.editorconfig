@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SOSResources
 build_property.RootNamespace = SOSResources
-build_property.ProjectDir = C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\
+build_property.ProjectDir = /Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources
+build_property.MSBuildProjectDirectory = /Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzXENyZWF0ZS5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzb3VyY2VzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzXERlbGV0ZS5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzb3VyY2VzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzXERldGFpbHMuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzb3VyY2VzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzXEVkaXQuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzb3VyY2VzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzXEluZGV4LmNzaHRtbA==
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Resources/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzb3VyY2VzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzLmNzaHRtbA==
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzXENyZWF0ZS5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzXERlbGV0ZS5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzXERldGFpbHMuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzXEVkaXQuY3NodG1s
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV4dGJvb2tzXEluZGV4LmNzaHRtbA==
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Textbooks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGV4dGJvb2tzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-u5prksgfmw
+[/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-48o0cl6xg6

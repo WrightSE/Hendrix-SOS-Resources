@@ -13,9 +13,12 @@ namespace SOSResources.Models
         [Display(Name = "Date Submitted")]
         public DateTime RequestDate { get; set; }
 
+        public int ParticipantID { get; set; }
         [Required]
         public Participant Participant {get; set;}
+
+        public int TextbookID { get; set; }
         [Required]
-        public ICollection<Textbook> Textbook { get; set; }
+        public Textbook Textbook { get; set; }
     }
 }

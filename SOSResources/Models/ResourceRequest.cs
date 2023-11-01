@@ -12,10 +12,13 @@ namespace SOSResources.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Submitted")]
         public DateTime RequestDate { get; set; }
-
+        [Required]
+        public int ParticipantID { get; set; }
         [Required]
         public Participant Participant {get; set;}
         [Required]
-        public ICollection<Resource> Resources { get; set; }
+        public int ResourceID { get; set; }
+        [Required]
+        public Resource Resource { get; set; }
     }
 }

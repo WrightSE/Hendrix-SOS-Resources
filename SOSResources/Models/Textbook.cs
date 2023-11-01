@@ -32,12 +32,12 @@ namespace SOSResources.Models
         }
 
         [StringLength(50)]
-        public string Edition { get; set; }
+        public string Edition? { get; set; }
 
         public int Quantity { get; set; }
 
         public bool CheckedOut { get; set;}
 
-        public ICollection<TextbookRequest> TextbookRequests { get; set; }
+        public ICollection<TextbookRequest>? TextbookRequests { get; set; }
     }
 }

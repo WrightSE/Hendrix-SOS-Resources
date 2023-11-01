@@ -14,7 +14,6 @@ namespace SOSResources.Models
         public string LastName { get; set; }
         [Required]
         [StringLength(50)]
-        [Column("FirstName")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
@@ -27,8 +26,12 @@ namespace SOSResources.Models
             }
         }
         
-        public ICollection<ResourceRequest> ResourceRequests { get; set; }
-        public ICollection<TextbookRequest> TextbookRequests { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Email { get; set; }
+
+        public ICollection<ResourceRequest>? ResourceRequests { get; set; }
+        public ICollection<TextbookRequest>? TextbookRequests { get; set; }
         
     }
 }
