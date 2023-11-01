@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/SOSResources.props" />
+  <Import Project="..\buildMultiTargeting\SOSResources.props" />
 </Project>

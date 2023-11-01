@@ -1,0 +1,60 @@
+@page
+@model SOSResources.Pages.Textbooks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Textbook</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Textbook.ID" />
+            <div class="form-group">
+                <label asp-for="Textbook.Title" class="control-label"></label>
+                <input asp-for="Textbook.Title" class="form-control" />
+                <span asp-validation-for="Textbook.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Textbook.AuthorLastName" class="control-label"></label>
+                <input asp-for="Textbook.AuthorLastName" class="form-control" />
+                <span asp-validation-for="Textbook.AuthorLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Textbook.AuthorFirstName" class="control-label"></label>
+                <input asp-for="Textbook.AuthorFirstName" class="form-control" />
+                <span asp-validation-for="Textbook.AuthorFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Textbook.Edition" class="control-label"></label>
+                <input asp-for="Textbook.Edition" class="form-control" />
+                <span asp-validation-for="Textbook.Edition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Textbook.Quantity" class="control-label"></label>
+                <input asp-for="Textbook.Quantity" class="form-control" />
+                <span asp-validation-for="Textbook.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Textbook.CheckedOut" /> @Html.DisplayNameFor(model => model.Textbook.CheckedOut)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
