@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {}
+    "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {
+    "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
+        "projectUniqueName": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
         "projectName": "SOSResources",
-        "projectPath": "C:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
+        "projectPath": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
         "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\obj\\",
+        "outputPath": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
