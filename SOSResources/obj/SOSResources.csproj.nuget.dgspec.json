@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {}
+    "/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/SOSResources.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj": {
+    "/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/SOSResources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
+        "projectUniqueName": "/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/SOSResources.csproj",
         "projectName": "SOSResources",
-        "projectPath": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\SOSResources.csproj",
-        "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Sarah\\WebDev\\Hendrix-SOS-Resources\\SOSResources\\obj\\",
+        "projectPath": "/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/SOSResources.csproj",
+        "packagesPath": "/Users/zach/.nuget/packages/",
+        "outputPath": "/Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sarah\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zach/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }
