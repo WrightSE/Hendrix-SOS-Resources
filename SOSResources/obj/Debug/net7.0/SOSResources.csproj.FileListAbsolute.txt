@@ -28,7 +28,6 @@ C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/refint
 C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/SOSResources.pdb
 C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/SOSResources.genruntimeconfig.cache
 C:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/ref/SOSResources.dll
-c:/Users/Sarah/WebDev/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/scopedcss/Pages/Resources.cshtml.rz.scp.css
 /Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/SOSResources.GeneratedMSBuildEditorConfig.editorconfig
 /Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/SOSResources.AssemblyInfoInputs.cache
 /Users/zach/Library/CloudStorage/OneDrive-HendrixCollege/School/Senior/Fall/Databases and Web Systems/Final Project/Hendrix-SOS-Resources/SOSResources/obj/Debug/net7.0/SOSResources.AssemblyInfo.cs
@@ -82,7 +81,6 @@ C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\static
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\scopedcss\Pages\Resources.cshtml.rz.scp.css
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\scopedcss\bundle\SOSResources.styles.css
 C:\Users\Sarah\WebDev\Hendrix-SOS-Resources\SOSResources\obj\Debug\net7.0\scopedcss\projectbundle\SOSResources.bundle.scp.css
