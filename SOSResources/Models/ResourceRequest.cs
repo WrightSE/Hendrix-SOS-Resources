@@ -17,5 +17,7 @@ namespace SOSResources.Models
         public Participant Participant {get; set;}
         [Required]
         public ICollection<Resource> Resources { get; set; }
+
+        public string Comment {get; set;}
     }
 }
