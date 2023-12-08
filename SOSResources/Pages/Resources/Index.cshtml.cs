@@ -27,14 +27,19 @@ namespace SOSResources.Pages.Resources
         
         public IList<Resource> Resources { get;set; } = default!;
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
-            
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             TypeSort = sortOrder == "Type" ? "type_desc" : "Type";
 
+            CurrentFilter = searchString;
+
             IQueryable<Resource> resourcesIQ = from r in _context.Resources
                                                     select r;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                resourcesIQ = resourcesIQ.Where(r => r.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
             switch(sortOrder){
                 case"name_desc":
                     resourcesIQ = resourcesIQ.OrderByDescending(r => r.Name);

@@ -22,9 +22,9 @@ namespace SOSResources.Models
         [StringLength(250)]
         public string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
 
-        //public bool Available { get; set;}
+        public bool Available { get; set;}
 
         public ICollection<ResourceRequest> ResourceRequests { get; set; }
     }
