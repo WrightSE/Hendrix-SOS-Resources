@@ -2,7 +2,7 @@
 @model SOSResources.Pages.Resources.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Resources";
 }
 
 <h1>Resources</h1>
@@ -14,22 +14,26 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Resource[0].Name)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Resources[0].Name)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Resource[0].Type)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TypeSort">
+                    @Html.DisplayNameFor(model => model.Resources[0].Type)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Resource[0].Description)
+                @Html.DisplayNameFor(model => model.Resources[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Resource[0].Quantity)
+                @Html.DisplayNameFor(model => model.Resources[0].Quantity)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Resource) {
+@foreach (var item in Model.Resources) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
