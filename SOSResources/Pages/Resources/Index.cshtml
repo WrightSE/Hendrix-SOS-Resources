@@ -49,7 +49,12 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Resources) {
-        <tr>
+        string availability = "";
+        if (item.Available != true){   
+                availability = "table-secondary";
+            }
+        <tr class="@availability">
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
