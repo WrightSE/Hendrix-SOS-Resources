@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.IdentityModel.Tokens;
 using SOSResources.Models;
 
 
@@ -92,6 +94,55 @@ namespace SOSResources.Data
             };
 
             context.TextbookRequests.AddRange(textbookRequests);
+
+            var sanitizer = new Resource
+            {
+                Name = "Hand Sanitizer",
+                Type = "Hygiene Supplies",
+                Quantity = 20,
+                Available = true
+            };
+
+            var toothbrush = new Resource
+            {
+                Name = "Toothbrush",
+                Type = "Hygiene Supplies",
+                Quantity = 37,
+                Available = true
+            };
+
+            var detergent = new Resource
+            {
+                Name = "Detergent",
+                Type = "Personal Care Supplies",
+                Quantity = 5,
+                Available = true
+            };
+
+             var bandaids = new Resource
+            {
+                Name = "Bandaids",
+                Type = "First Aid Supplies",
+                Quantity = 7,
+                Available = true
+            };
+
+             var antacids = new Resource
+            {
+                Name = "Antacids",
+                Type = "Over-the-counter Medications",
+                Available = true
+            };
+
+            var resources = new Resource[]{
+                sanitizer,
+                toothbrush,
+                detergent,
+                bandaids,
+                antacids
+            };
+            context.Resources.AddRange(resources);
+
             context.SaveChanges();
         }
     }
