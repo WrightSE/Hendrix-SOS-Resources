@@ -23,6 +23,17 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ResourceRequest.Requester.FullName)
         </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.Resources)
+        </dt> 
+        <dd class ="col-sm-10">
+            @foreach (var item in Model.ResourceRequest.Resources)
+                    {
+                        @item.Name <br />
+                    }
+        </dd>
+        
+        
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ResourceRequest.Comment)
         </dt>
