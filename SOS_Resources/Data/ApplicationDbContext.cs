@@ -16,6 +16,7 @@ public class ApplicationDbContext : IdentityDbContext<SOS_User>
     public DbSet<Resource> Resources { get; set; }
     public DbSet<TextbookRequest> TextbookRequests { get; set; }
     public DbSet<ResourceRequest> ResourceRequests { get; set; }
+    public DbSet<Participant> Participants { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,6 +26,6 @@ public class ApplicationDbContext : IdentityDbContext<SOS_User>
         modelBuilder.Entity<Resource>().ToTable(nameof(Resource));
         modelBuilder.Entity<TextbookRequest>().ToTable(nameof(TextbookRequest));
         modelBuilder.Entity<ResourceRequest>().ToTable(nameof(ResourceRequest));
-        
+        modelBuilder.Entity<Participant>().ToTable(nameof(Participant));
     }
 }

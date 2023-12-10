@@ -36,6 +36,7 @@ namespace SOS_Resources.Pages.Textbooks
         {
           if (!ModelState.IsValid)
             {
+                Console.WriteLine("model state invalid");
                 return Page();
             }
 

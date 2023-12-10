@@ -18,11 +18,8 @@ namespace SOS_Resources.Models
         public string Author { get; set; }
 
         [StringLength(100)]
-        public string Edition { get; set; }
-        public ICollection<Copy> Copies { get; set; }
+        public string? Edition { get; set; }
+        public ICollection<Copy>? Copies { get; set; }
 
-        public int Count { get;
-            
-        }
     }
 }

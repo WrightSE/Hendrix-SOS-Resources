@@ -19,7 +19,18 @@ public class SOS_User : IdentityUser
     public string? Pronouns { get; set; }
     [PersonalData]
     public string? PrefName { get; set; }
-
+    
+    public string DisplayName
+    {
+        get
+        {
+            if (!String.IsNullOrEmpty(PrefName)){
+                return PrefName + LName;
+            } else {
+                return FName + LName;
+            }
+        }
+    }
 
     [PersonalData]
     public string? Class { get; set; }
@@ -58,4 +69,5 @@ public class SOS_User : IdentityUser
 
     [PersonalData]
     public string? ReferredBy { get; set; }
+
 }

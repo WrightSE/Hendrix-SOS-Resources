@@ -32,7 +32,7 @@
                 @Html.DisplayFor(modelItem => item.RequestDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Requester.FullName)
+                @Html.DisplayFor(modelItem => item.Requester.User.DisplayName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Active)
