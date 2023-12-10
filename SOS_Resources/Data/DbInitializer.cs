@@ -3,6 +3,7 @@ using SOS_Resources.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SOS_Resources.Data
 {
@@ -20,6 +21,8 @@ namespace SOS_Resources.Data
                 FName = "Tester",
                 HendrixID = "123456",
                 LName = "Testuser",
+                Pronouns = "they/them",
+                PrefName = "Testy",
                 Email = "test@hendrix.edu",
                 PhoneNumber = "123456789",
                 Class = "2024",
@@ -32,12 +35,22 @@ namespace SOS_Resources.Data
                 EmergPhone = "1112223333",
                 Employer = "Boss",
                 EmployerPhone = "1231231234",
-                JobPosition = "RA"
+                JobPosition = "RA",
+                PayType = "Hourly",
+                PayFreq = "Monthly",
+                MonthlyWages = 100,
+
             };
 
+            //user.PasswordHash = "AQAAAAIAAYagAAAAEGrw8b9U6+1O43h54YXlkVnKzlGsZxQe5LaUtlllPmYOPwaUewjx5htx1Y8D7J8HOw==";
+            UserStore<SOS_User> userStore = new UserStore<SOS_User>(context);
+            IUserEmailStore<SOS_User> emailStore = (IUserEmailStore<SOS_User>)userStore;
             UserManager<SOS_User> userManager = context.GetService<UserManager<SOS_User>>();
-            
-            var result = userManager.CreateAsync(user, "password");
+
+            userStore.SetUserNameAsync(user, "test@hendrix.edu", CancellationToken.None);
+            emailStore.SetEmailAsync(user, "test@hendrix.edu", CancellationToken.None);
+            user.EmailConfirmed = true;
+            var result = userManager.CreateAsync(user, "Passw0rd!");
 
 
             var zach = new Participant

@@ -25,9 +25,9 @@ public class SOS_User : IdentityUser
         get
         {
             if (!String.IsNullOrEmpty(PrefName)){
-                return PrefName + LName;
+                return PrefName +" "+ LName;
             } else {
-                return FName + LName;
+                return FName +" "+ LName;
             }
         }
     }
