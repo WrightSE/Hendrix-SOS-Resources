@@ -37,7 +37,7 @@ namespace SOSResources.Pages.Resources
 
         
 
-        public async Task OnGetAsync(string sortOrder, string searchString, string typeString, int? pageIndex)
+        public async Task OnGetAsync(string sortOrder, string searchString, string typeString, int? pageIndex, int pageSize = 10)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             TypeSort = sortOrder == "Type" ? "type_desc" : "Type";
@@ -76,7 +76,6 @@ namespace SOSResources.Pages.Resources
                     break;
             }
             
-            var pageSize = Configuration.GetValue("PageSize", 4);
             Resources = await PaginatedList<Resource>.CreateAsync(
                 resourcesIQ
                 .Include(r => r.Type)

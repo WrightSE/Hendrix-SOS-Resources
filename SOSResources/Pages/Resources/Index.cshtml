@@ -90,6 +90,7 @@
     </tbody>
 </table>
 
+<div style="text-align: center">Page @Model.Resources.PageIndex of @Model.Resources.TotalPages</div>
 @{
     var prevDisabled = !Model.Resources.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.Resources.HasNextPage ? "disabled" : "";
@@ -100,6 +101,7 @@
     asp-route-pageIndex="@(Model.Resources.PageIndex - 1)"
     asp-route-nameFilter="@Model.NameFilter"
     asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="@Model.Resources.PageSize"
     class="btn btn-primary @prevDisabled">
      Previous
 </a>
@@ -108,6 +110,40 @@
     asp-route-pageIndex="@(Model.Resources.PageIndex + 1)"
     asp-route-nameFilter="@Model.NameFilter"
     asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="@Model.Resources.PageSize"
     class="btn btn-primary @nextDisabled">
      Next
 </a>
+
+<div>
+    <p>Resources per page:
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="10">
+    10</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="25">
+    25</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="50">
+    50</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="-1">
+    All</a>
+    </p>
+</div>
