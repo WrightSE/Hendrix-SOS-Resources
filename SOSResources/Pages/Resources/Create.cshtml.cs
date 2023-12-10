@@ -10,7 +10,7 @@ using SOSResources.Models;
 
 namespace SOSResources.Pages.Resources
 {
-    public class CreateModel : PageModel
+    public class CreateModel : TypeNamePageModel
     {
         private readonly SOSResources.Data.SOSContext _context;
 
@@ -21,6 +21,7 @@ namespace SOSResources.Pages.Resources
 
         public IActionResult OnGet()
         {
+            PopulateTypesDropdownList(_context);
             return Page();
         }
 
@@ -33,6 +34,7 @@ namespace SOSResources.Pages.Resources
         {
           if (!ModelState.IsValid)
             {
+                PopulateTypesDropdownList(_context);
                 return Page();
             }
 

@@ -94,11 +94,38 @@ namespace SOSResources.Data
             };
 
             context.TextbookRequests.AddRange(textbookRequests);
+            var firstaid = new ResourceType
+            {
+                Name = "First Aid Supplies"
+            };
+            var hygiene = new ResourceType
+            {
+                Name = "Hygiene Supplies"
+            };
+            var med = new ResourceType
+            {
+                Name = "Over-the-counter Medications"
+            };
+            var personal = new ResourceType
+            {
+                Name = "Personal Care Supplies"
+            };
 
+            var resourceTypes = new ResourceType[]
+            {
+                firstaid,
+                hygiene,
+                med,
+                personal
+            };
+                
+            context.ResourceTypes.AddRange(resourceTypes);
+
+                
             var sanitizer = new Resource
             {
                 Name = "Hand Sanitizer",
-                Type = "Hygiene Supplies",
+                Type = hygiene,
                 Quantity = 20,
                 Available = true
             };
@@ -106,7 +133,7 @@ namespace SOSResources.Data
             var toothbrush = new Resource
             {
                 Name = "Toothbrush",
-                Type = "Hygiene Supplies",
+                Type = hygiene,
                 Quantity = 37,
                 Available = true
             };
@@ -114,7 +141,7 @@ namespace SOSResources.Data
             var detergent = new Resource
             {
                 Name = "Detergent",
-                Type = "Personal Care Supplies",
+                Type = personal,
                 Quantity = 5,
                 Available = true
             };
@@ -122,7 +149,7 @@ namespace SOSResources.Data
              var bandaids = new Resource
             {
                 Name = "Bandaids",
-                Type = "First Aid Supplies",
+                Type = firstaid,
                 Quantity = 7,
                 Available = true
             };
@@ -130,7 +157,7 @@ namespace SOSResources.Data
              var antacids = new Resource
             {
                 Name = "Antacids",
-                Type = "Over-the-counter Medications",
+                Type = med,
                 Available = true
             };
 

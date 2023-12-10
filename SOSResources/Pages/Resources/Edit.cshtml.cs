@@ -11,7 +11,7 @@ using SOSResources.Models;
 
 namespace SOSResources.Pages.Resources
 {
-    public class EditModel : PageModel
+    public class EditModel : TypeNamePageModel
     {
         private readonly SOSResources.Data.SOSContext _context;
 
@@ -36,6 +36,7 @@ namespace SOSResources.Pages.Resources
                 return NotFound();
             }
             Resource = resource;
+            PopulateTypesDropdownList(_context, Resource.Type);
             return Page();
         }
 

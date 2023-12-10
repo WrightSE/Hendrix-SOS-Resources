@@ -29,7 +29,10 @@ namespace SOSResources.Pages.Resources
                 return NotFound();
             }
 
-            var resource = await _context.Resources.FirstOrDefaultAsync(m => m.ID == id);
+            var resource = await _context.Resources
+            .AsNoTracking()
+            .Include(r => r.Type)
+            .FirstOrDefaultAsync(m => m.ID == id);
 
             if (resource == null)
             {
@@ -48,7 +51,8 @@ namespace SOSResources.Pages.Resources
             {
                 return NotFound();
             }
-            var resource = await _context.Resources.FindAsync(id);
+            var resource = await _context.Resources
+                .FindAsync(id);
 
             if (resource != null)
             {

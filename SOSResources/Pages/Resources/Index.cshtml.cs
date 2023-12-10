@@ -65,7 +65,7 @@ namespace SOSResources.Pages.Resources
                 pageIndex = 1;
                                 
             } if (!String.IsNullOrEmpty(typeString)){
-                resourcesIQ = resourcesIQ.Where(r => r.Type.Contains(typeString));
+                resourcesIQ = resourcesIQ.Where(r => r.Type.Name.Contains(typeString));
                 pageIndex = 1;
             }
             switch(sortOrder){
@@ -73,10 +73,10 @@ namespace SOSResources.Pages.Resources
                     resourcesIQ = resourcesIQ.OrderByDescending(r => r.Name);
                     break;
                 case"Type":
-                resourcesIQ = resourcesIQ.OrderBy(r => r.Type);
+                resourcesIQ = resourcesIQ.OrderBy(r => r.Type.Name);
                 break;
                 case"type_desc":
-                    resourcesIQ = resourcesIQ.OrderByDescending(r => r.Type);
+                    resourcesIQ = resourcesIQ.OrderByDescending(r => r.Type.Name);
                     break;
                 default:
                     resourcesIQ = resourcesIQ.OrderBy(r => r.Name);
@@ -85,7 +85,9 @@ namespace SOSResources.Pages.Resources
             
             var pageSize = Configuration.GetValue("PageSize", 4);
             Resources = await PaginatedList<Resource>.CreateAsync(
-                resourcesIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+                resourcesIQ
+                .Include(r => r.Type)
+                .AsNoTracking(), pageIndex ?? 1, pageSize);
             
         }
     }
