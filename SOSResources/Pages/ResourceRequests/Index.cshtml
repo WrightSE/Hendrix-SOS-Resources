@@ -17,6 +17,9 @@
                 @Html.DisplayNameFor(model => model.ResourceRequest[0].RequestDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ResourceRequest[0].Requester)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ResourceRequest[0].Comment)
             </th>
             <th></th>
@@ -27,6 +30,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.RequestDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requester)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comment)

@@ -14,7 +14,7 @@ namespace SOSResources.Models
         public DateTime RequestDate { get; set; }
 
         [Required]
-        public Participant Participant {get; set;}
+        public Participant Requester {get; set;}
         [Required]
         public ICollection<Resource> Resources { get; set; }
 
