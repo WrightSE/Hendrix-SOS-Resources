@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using NuGet.Protocol.Core.Types;
 using SOSResources.Data;
 using SOSResources.Models;
 
 namespace SOSResources.Pages.Resources
 {
-    public class IndexModel : PageModel
+    public class IndexModel : TypeNamePageModel
     {
         private readonly SOSResources.Data.SOSContext _context;
         private readonly IConfiguration Configuration;
@@ -34,24 +35,16 @@ namespace SOSResources.Pages.Resources
         public PaginatedList<Resource> Resources { get;set; } = default!;
 
 
-        public List<SelectListItem> TypesList { get; } = new List<SelectListItem>
-        {
-            new SelectListItem { Text = ""},
-            new SelectListItem { Text = "First Aid Supplies"},
-            new SelectListItem { Text = "Hygiene Supplies"},
-            new SelectListItem { Text = "Over-the-counter Medications"},
-            new SelectListItem { Text = "Personal Care Supplies"},
-            new SelectListItem { Text = "Other"},
-            
-        };
+        
 
         public async Task OnGetAsync(string sortOrder, string searchString, string typeString, int? pageIndex)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             TypeSort = sortOrder == "Type" ? "type_desc" : "Type";
-
             NameFilter = searchString;
             TypeFilter = typeString;
+
+            PopulateTypesDropdownList(_context);
 
 
 
@@ -65,7 +58,7 @@ namespace SOSResources.Pages.Resources
                 pageIndex = 1;
                                 
             } if (!String.IsNullOrEmpty(typeString)){
-                resourcesIQ = resourcesIQ.Where(r => r.Type.Name.Contains(typeString));
+                resourcesIQ = resourcesIQ.Where(r => r.Type.ID == int.Parse(typeString));
                 pageIndex = 1;
             }
             switch(sortOrder){

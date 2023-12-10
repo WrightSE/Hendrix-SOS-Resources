@@ -9,6 +9,8 @@
 
 <p>
     <a asp-page="Create">Create New</a>
+
+    <a asp-page="/ResourceTypes/Index">Edit Types</a>
 </p>
 
 <form asp-page="./Index" method="get">
@@ -17,7 +19,10 @@
             Name:
             <input type="text" name="SearchString" value="@Model.NameFilter" />
             Type:
-            <select name="typeString" value="@Model.TypeFilter" asp-items="Model.TypesList"></select>
+            <select name="typeString" value="@Model.TypeFilter" 
+                    asp-items="Model.TypeNameSL">
+                <option value="">Search by type</option>
+            </select>
             <input type="submit" value="Search" class="btn btn-primary" /> 
             <a asp-page="./Index">Back to full List</a>
         </p>
@@ -39,6 +44,7 @@
                     @Html.DisplayNameFor(model => model.Resources[0].Type)
                 </a>
             </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Resources[0].Description)
             </th>
