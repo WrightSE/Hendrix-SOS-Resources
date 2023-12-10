@@ -9,13 +9,12 @@ namespace SOS_Resources.Models
 {
     public class Participant
     {
-        [Key]
-        public string HendrixID { get; set; }
+        public int ID { get; set; }
 
         [Required]
         public SOS_User User { get; set;}
         
-        
+
         public ICollection<ResourceRequest>? ResourceRequests { get; set; }
         public ICollection<TextbookRequest>? TextbookRequests { get; set; }
         

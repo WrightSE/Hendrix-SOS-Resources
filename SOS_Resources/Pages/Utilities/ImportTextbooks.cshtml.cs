@@ -71,18 +71,19 @@ namespace SOS_Resources.Pages.Utilities
                         parsed.Add(currentString);
                     }
                 }
+                if (!parsed.IsNullOrEmpty()){
+                    string title = parsed[0];
+                    string author = parsed[1];
+                    string edition = parsed[2];
+                    bool checkedOut = parsed[3] == "YES" ? true : false;
 
-                string title = parsed[0];
-                string author = parsed[1];
-                string edition = parsed[2];
-                bool checkedOut = parsed[3] == "YES" ? true : false;
+                    var tbVals = (title, author, edition, checkedOut);
 
-                var tbVals = (title, author, edition, checkedOut);
-
-                if (textbookCopies.ContainsKey(tbVals)){
-                    textbookCopies[tbVals] = textbookCopies[tbVals] + 1;
-                } else {
-                    textbookCopies.Add(tbVals, 1);
+                    if (textbookCopies.ContainsKey(tbVals)){
+                        textbookCopies[tbVals] = textbookCopies[tbVals] + 1;
+                    } else {
+                        textbookCopies.Add(tbVals, 1);
+                    }
                 }
             }
 
