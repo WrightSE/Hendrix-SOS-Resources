@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SOSResources.Data;
 using SOSResources.Models;
@@ -20,25 +21,46 @@ namespace SOSResources.Pages.Resources
         }
         public string NameSort { get; set; }
         public string TypeSort { get; set; }
-        public string CurrentFilter { get; set; }
+        public string NameFilter { get; set; }
+        public string TypeFilter { get; set; }
         public string CurrentSort { get; set; }
 
 
         
         public IList<Resource> Resources { get;set; } = default!;
 
-        public async Task OnGetAsync(string sortOrder, string searchString)
+
+        public List<SelectListItem> TypesList { get; } = new List<SelectListItem>
+        {
+            new SelectListItem { Text = ""},
+            new SelectListItem { Text = "First Aid Supplies"},
+            new SelectListItem { Text = "Hygiene Supplies"},
+            new SelectListItem { Text = "Over-the-counter Medications"},
+            new SelectListItem { Text = "Personal Care Supplies"},
+            new SelectListItem { Text = "Other"},
+            
+        };
+
+        public async Task OnGetAsync(string sortOrder, string searchString, string typeString)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             TypeSort = sortOrder == "Type" ? "type_desc" : "Type";
 
-            CurrentFilter = searchString;
+            NameFilter = searchString;
+            TypeFilter = typeString;
+
+
 
             IQueryable<Resource> resourcesIQ = from r in _context.Resources
                                                     select r;
+
+            
             if (!String.IsNullOrEmpty(searchString))
             {
                 resourcesIQ = resourcesIQ.Where(r => r.Name.ToUpper().Contains(searchString.ToUpper()));
+                                
+            } if (!String.IsNullOrEmpty(typeString)){
+                resourcesIQ = resourcesIQ.Where(r => r.Type.Contains(typeString));
             }
             switch(sortOrder){
                 case"name_desc":
