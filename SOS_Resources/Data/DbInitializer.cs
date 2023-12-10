@@ -11,7 +11,7 @@ namespace SOS_Resources.Data
         public static void Initialize(ApplicationDbContext context)
         {
             // Look for any participants.
-            if (context.Participants.Any())
+            if (context.Users.Any())
             {
                 return;   // DB has been seeded
             };
