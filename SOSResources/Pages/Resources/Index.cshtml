@@ -28,7 +28,9 @@
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                   asp-route-nameFilter="@Model.NameFilter"
+                   asp-route-typeFilter="@Model.TypeFilter">
                     @Html.DisplayNameFor(model => model.Resources[0].Name)
                 </a>
             </th>
@@ -81,3 +83,25 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Resources.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Resources.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="@(Model.Resources.PageIndex - 1)"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    class="btn btn-primary @prevDisabled">
+     Previous
+</a>
+<a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="@(Model.Resources.PageIndex + 1)"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    class="btn btn-primary @nextDisabled">
+     Next
+</a>
