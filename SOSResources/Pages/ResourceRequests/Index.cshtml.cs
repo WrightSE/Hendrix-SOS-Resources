@@ -25,7 +25,11 @@ namespace SOSResources.Pages.ResourceRequests
         {
             if (_context.ResourceRequests != null)
             {
-                ResourceRequest = await _context.ResourceRequests.ToListAsync();
+                ResourceRequest = await _context.ResourceRequests
+                    .AsNoTracking()
+                    .Include(r => r.Requester)
+                    .Include(r => r.Resources)
+                    .ToListAsync();
             }
         }
     }

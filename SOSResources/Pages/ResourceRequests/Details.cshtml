@@ -8,7 +8,7 @@
 <h1>Details</h1>
 
 <div>
-    <h4>ResourceRequest</h4>
+    <h4>Resource Request</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -16,6 +16,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ResourceRequest.RequestDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.Requester)
+        </dt>   
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResourceRequest.Requester.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ResourceRequest.Comment)

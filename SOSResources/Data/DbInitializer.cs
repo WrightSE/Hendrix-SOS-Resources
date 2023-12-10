@@ -94,6 +94,7 @@ namespace SOSResources.Data
             };
 
             context.TextbookRequests.AddRange(textbookRequests);
+
             var firstaid = new ResourceType
             {
                 Name = "First Aid Supplies"
@@ -154,6 +155,14 @@ namespace SOSResources.Data
                 Available = true
             };
 
+            var gauze = new Resource
+            {
+                Name = "Gauze",
+                Type = firstaid,
+                Quantity = 3,
+                Available = true
+            };
+
              var antacids = new Resource
             {
                 Name = "Antacids",
@@ -169,6 +178,17 @@ namespace SOSResources.Data
                 antacids
             };
             context.Resources.AddRange(resources);
+
+            var req = new ResourceRequest{
+                Requester = bob,
+                RequestDate = DateTime.Parse("2023-09-10"),
+                Resources = new List<Resource> { antacids, bandaids}
+            };
+
+            var rrs = new ResourceRequest[]{
+                req
+            };
+            context.ResourceRequests.AddRange(rrs);
 
             context.SaveChanges();
         }

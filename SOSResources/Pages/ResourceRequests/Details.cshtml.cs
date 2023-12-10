@@ -28,7 +28,11 @@ namespace SOSResources.Pages.ResourceRequests
                 return NotFound();
             }
 
-            var resourcerequest = await _context.ResourceRequests.FirstOrDefaultAsync(m => m.ID == id);
+            var resourcerequest = await _context.ResourceRequests
+                .AsNoTracking()
+                .Include(r => r.Requester)
+                .Include(r => r.Resources)
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (resourcerequest == null)
             {
                 return NotFound();

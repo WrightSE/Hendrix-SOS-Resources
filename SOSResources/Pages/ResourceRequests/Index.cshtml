@@ -20,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.ResourceRequest[0].Requester)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ResourceRequest[0].Comment)
+                @Html.DisplayNameFor(model => model.ResourceRequest[0].Resources)
             </th>
             <th></th>
         </tr>
@@ -32,10 +32,15 @@
                 @Html.DisplayFor(modelItem => item.RequestDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Requester)
+                @Html.DisplayFor(modelItem => item.Requester.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Comment)
+                @{
+                        foreach (var resource in item.Resources)
+                        {
+                            @resource.Name <br />
+                        }
+                }
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
