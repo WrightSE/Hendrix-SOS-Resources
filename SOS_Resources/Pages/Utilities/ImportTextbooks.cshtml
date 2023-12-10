@@ -1,0 +1,29 @@
+@page
+@model SOS_Resources.Pages.Utilities.ImportModel
+
+@{
+    ViewData["Title"] = "Import Textbooks";
+}
+
+<h1>Import Textbooks</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        
+        <form method="post">
+            <div class="form-group">
+                <p>Copy and paste CSV here! Must be formatted as: Title, Author, Edition, Checked Out. Any number of trailing commas is ok.</p>
+                <textarea name="InputCSVString" value="@Model.CSVString" rows="5" cols="80">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Import" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
