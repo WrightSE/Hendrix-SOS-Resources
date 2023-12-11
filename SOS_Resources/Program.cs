@@ -32,9 +32,17 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AllowAnonymousToPage("/Textbooks/Index");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
     //options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
-
+    // Textbook Request pages
+    options.Conventions.AuthorizeFolder("/TextbookRequests");
+    options.Conventions.AuthorizePage("/TextbookRequests/Index", "IsAdmin");
+    options.Conventions.AuthorizePage("/TextbookRequests/Edit", "IsAdmin");
+    options.Conventions.AuthorizePage("/TextbookRequests/Delete", "IsAdmin");
     // Resource pages
 
+
+    options.Conventions.AuthorizeFolder("/Admin", "IsAdmin");
+    
+    
     options.Conventions.AllowAnonymousToPage("/Error");
     //options.Conventions.AllowAnonymousToAreaFolder("Public", "/");
 

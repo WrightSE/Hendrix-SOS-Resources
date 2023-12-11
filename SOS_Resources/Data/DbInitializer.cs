@@ -92,7 +92,7 @@ namespace SOS_Resources.Data
             user.Participant = test;
 
             context.Participants.Add(test);
-            
+
             var adm = new Participant
             {
                 SOS_User = admin,
@@ -158,6 +158,44 @@ namespace SOS_Resources.Data
             };
 
             context.TextbookRequests.AddRange(textbookRequests);
+
+
+            var types = new ResourceType[]{
+                new ResourceType(){Name = "Food"},
+                new ResourceType(){Name = "Supplies"},
+                new ResourceType(){Name = "Mentoring"},
+                new ResourceType(){Name = "Legal"},
+                new ResourceType(){Name = "Other"}
+            };
+
+            context.ResourceTypes.AddRange(types);
+
+            var resources = new Resource[]{
+                new Resource(){
+                    Type = types[0],
+                    Name = "Pasta",
+                    Available = true,
+                    Quantity = 20,
+                    Description = "Spaghetti"
+                },
+                new Resource(){
+                    Type = types[1],
+                    Name = "Toothpaste",
+                    Available = true,
+                    Quantity = 10,
+                    Description = "Crest travel sized toothpaste"
+                },
+                new Resource(){
+                    Type = types[1],
+                    Name = "Shampoo",
+                    Available = true,
+                    Quantity = 5,
+                    Description = "Panteen"
+                },
+
+            };
+            context.Resources.AddRange(resources);
+
             context.SaveChanges();
         }
     }
