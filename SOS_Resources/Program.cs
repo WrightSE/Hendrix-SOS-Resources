@@ -27,7 +27,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/RegisterConfirmation");
 
     // Textbook pages
-    options.Conventions.AuthorizeFolder("/Textbooks/Manage");
+    options.Conventions.AuthorizeFolder("/Textbooks/Manage", "isAdmin");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Index");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
 
@@ -42,6 +42,8 @@ builder.Services.AddAuthorization(options =>
     options.FallbackPolicy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .Build();
+    options.AddPolicy("IsAdmin",
+         policy => policy.RequireRole("Administrator"));
 });
 
 
