@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -35,6 +36,8 @@ namespace SOS_Resources.Pages.TextbookRequests
             {
                 return Page();
             }
+
+            //var currentUser = User.Identity;
 
             _context.TextbookRequests.Add(TextbookRequest);
             await _context.SaveChangesAsync();
