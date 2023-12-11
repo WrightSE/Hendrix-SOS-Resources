@@ -1,0 +1,48 @@
+@page
+@model SOS_Resources.Pages.ResourceRequests.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Resource Request</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.RequestDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResourceRequest.RequestDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.Requester)
+        </dt>   
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResourceRequest.Requester.User.DisplayName)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.Resources)
+        </dt> 
+        <dd class ="col-sm-10">
+            @foreach (var item in Model.ResourceRequest.Resources)
+                    {
+                        @item.Name <br />
+                    }
+        </dd>
+        
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ResourceRequest.Comment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResourceRequest.Comment)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ResourceRequest?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

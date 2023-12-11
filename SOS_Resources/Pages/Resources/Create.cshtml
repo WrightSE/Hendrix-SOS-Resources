@@ -1,0 +1,57 @@
+@page
+@model SOS_Resources.Pages.Resources.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Resource</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Resource.Name" class="control-label"></label>
+                <input asp-for="Resource.Name" class="form-control" />
+                <span asp-validation-for="Resource.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resource.Type" class="control-label"></label>
+                <select asp-for="Resource.TypeID" class="form-control"
+                        asp-items="@Model.TypeNameSL">
+                    <option value="">Select Type</option>
+                </select>
+                <span asp-validation-for="Resource.TypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resource.Description" class="control-label"></label>
+                <input asp-for="Resource.Description" class="form-control" />
+                <span asp-validation-for="Resource.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resource.Quantity" class="control-label"></label>
+                <input asp-for="Resource.Quantity" class="form-control" />
+                <span asp-validation-for="Resource.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" checked="true" asp-for="Resource.Available" /> @Html.DisplayNameFor(model => model.Resource.Available)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
