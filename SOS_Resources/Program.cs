@@ -27,7 +27,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/RegisterConfirmation");
 
     // Textbook pages
-    options.Conventions.AuthorizeFolder("/Textbooks/Manage", "isAdmin");
+    options.Conventions.AuthorizeFolder("/Textbooks/Manage", "IsAdmin");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Index");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
 
@@ -43,7 +43,7 @@ builder.Services.AddAuthorization(options =>
         .RequireAuthenticatedUser()
         .Build();
     options.AddPolicy("IsAdmin",
-         policy => policy.RequireRole("Administrator"));
+         policy => policy.RequireRole("Admin"));
 });
 
 
@@ -105,8 +105,10 @@ using (var scope = app.Services.CreateScope())
 
     //var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW");
     //await SeedData.Initialize(services, testUserPw);
+    var roleManager = services.GetService<RoleManager<IdentityRole>>();
+    await roleManager.CreateAsync(new IdentityRole("Admin"));
 
-    DbInitializer.Initialize(context);
+    DbInitializer.Initialize(context, services);
 }
 
 app.UseHttpsRedirection();

@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace SOS_Resources.Data
 {
     public static class DbInitializer
-    {
-        public static void Initialize(ApplicationDbContext context)
+    {   
+        public static void Initialize(ApplicationDbContext context, IServiceProvider services)
         {
             // Look for any participants.
             if (context.Users.Any())
             {
                 return;   // DB has been seeded
-            };
+            }; 
 
             var user = new SOS_User{
                 FName = "Tester",
@@ -52,7 +52,8 @@ namespace SOS_Resources.Data
             user.EmailConfirmed = true;
             var result = userManager.CreateAsync(user, "Passw0rd!");
 
-
+            userManager.AddToRoleAsync(user, "Admin");
+            
             var zach = new Participant
             {
                 User = user
