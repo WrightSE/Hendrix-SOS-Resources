@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOS_Resources", "SOS_Resources.csproj", "{DDD487BB-6804-46B4-8AD8-4A735604AFA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD487BB-6804-46B4-8AD8-4A735604AFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD487BB-6804-46B4-8AD8-4A735604AFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD487BB-6804-46B4-8AD8-4A735604AFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD487BB-6804-46B4-8AD8-4A735604AFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEC871BF-DD2E-4468-B6F4-FB07949D83FD}
+	EndGlobalSection
+EndGlobal

@@ -23,6 +23,8 @@ namespace SOSResources.Pages.Textbooks
         [BindProperty]
         public Textbook Textbook { get; set; } = default!;
 
+        public int Copies {get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Textbooks == null)
@@ -41,7 +43,7 @@ namespace SOSResources.Pages.Textbooks
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int copies)
         {
             if (!ModelState.IsValid)
             {
@@ -49,6 +51,15 @@ namespace SOSResources.Pages.Textbooks
             }
 
             _context.Attach(Textbook).State = EntityState.Modified;
+
+            
+            for (int i = 0; i < copies; i++) {
+                Copy c = new Copy{
+                    textbook = Textbook,
+                    CheckedOut = false
+                };
+                _context.Copies.Add(c);
+            };
 
             try
             {

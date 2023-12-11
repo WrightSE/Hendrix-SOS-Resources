@@ -30,6 +30,10 @@
                 <span asp-validation-for="Textbook.Edition" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label for="copies" class="control-label">Add Copies</label>
+                <input name="copies" type="number" step="1" value="@Model.Copies" max="10" min="0"/>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

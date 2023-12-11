@@ -10,46 +10,129 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <h3>Search:</h3>
+        <p>
+            Title: 
+            <input type="text" name="TitleSearchString" value="@Model.TitleFilter" placeholder="Title"/>
+            Author:
+            <input type="text" name="AuthorSearchString" value="@Model.AuthorFilter" placeholder="Author"/>  
+            <input type="submit" value="Search" class="btn btn-primary" /> | 
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Textbook[0].Title)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort" asp-route-titleFilter="@Model.TitleFilter" asp-route-authorFilter="@Model.AuthorFilter">
+                    @Html.DisplayNameFor(model => model.Textbooks[0].Title)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Textbook[0].Author)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.AuthorSort" asp-route-titleFilter="@Model.TitleFilter" asp-route-authorFilter="@Model.AuthorFilter">
+                    @Html.DisplayNameFor(model => model.Textbooks[0].Author)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Textbook[0].Edition)
+                @Html.DisplayNameFor(model => model.Textbooks[0].Edition)
             </th>
             <th>
-                Copies
+                Copies Available
             </th>
-
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Textbook) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Edition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Copies.Count)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+    @foreach (var item in Model.Textbooks) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Copies.Where(c => c.CheckedOut.Equals(false)).ToList().Count)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+    }
     </tbody>
 </table>
+
+<div style="text-align: center">Page @Model.Textbooks.PageIndex of @Model.Textbooks.TotalPages</div>
+@{
+    var prevDisabled = !Model.Textbooks.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Textbooks.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Textbooks.PageIndex - 1)"
+   asp-route-titleFilter="@Model.TitleFilter"
+   asp-route-authorFilter="@Model.AuthorFilter"
+   asp-route-pageSize="@Model.Textbooks.PageSize"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Textbooks.PageIndex + 1)"
+   asp-route-titleFilter="@Model.TitleFilter"
+   asp-route-authorFilter="@Model.AuthorFilter"
+   asp-route-pageSize="@Model.Textbooks.PageSize"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
+
+<div>
+    <p>Textbooks per page: 
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-titleFilter="@Model.TitleFilter"
+    asp-route-authorFilter="@Model.AuthorFilter"
+    asp-route-pageSize="10">
+    10 </a> | 
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-titleFilter="@Model.TitleFilter"
+    asp-route-authorFilter="@Model.AuthorFilter"
+    asp-route-pageSize="20">
+    25 </a> | 
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-titleFilter="@Model.TitleFilter"
+    asp-route-authorFilter="@Model.AuthorFilter"
+    asp-route-pageSize="40">
+    50 </a> | 
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-titleFilter="@Model.TitleFilter"
+    asp-route-authorFilter="@Model.AuthorFilter"
+    asp-route-pageSize="100">
+    100 </a> | 
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-titleFilter="@Model.TitleFilter"
+    asp-route-authorFilter="@Model.AuthorFilter"
+    asp-route-pageSize="-1">
+    All </a>
+    </p>
+</div>

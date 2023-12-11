@@ -1,0 +1,70 @@
+@page
+@model SOSResources.Pages.Textbooks.Copies.CopyDeleteModel
+
+@{
+    ViewData["Title"] = "Delete Copy";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this Copy?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Copy.textbook.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Copy.textbook.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Copy.textbook.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Copy.textbook.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Copy.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Copy.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Copy.CheckedOut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Copy.CheckedOut)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Copy.textbookRequests)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th class="col-sm-8">Requester</th>
+                </tr>
+                @foreach (var request in Model.Copy.textbookRequests)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => request.Requester.FullName)
+                        </td>
+                        <td>
+                            <a asp-page="/TextbookRequests/Details" asp-route-id="@request.ID">Request Details</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+        <td class="col-sm-8">
+            
+        </td>
+    </dl>
+    <p style="color: red">You cannot delete this copy if there are connected requests</p>
+    <form method="post">
+        <input type="hidden" asp-for="Copy.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="/Textbooks/Delete" asp-route-id="@Model.Copy.textbook.ID">Back to List</a>
+    </form>
+</div>
+
