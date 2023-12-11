@@ -17,6 +17,7 @@
             <div class="form-floating">
                 <input asp-for="Input.HendrixID" class="form-control" />
                 <label asp-for="Input.HendrixID" class="form-label"></label>
+                <span asp-validation-for="Input.HendrixID" class="text-danger"></span>
             </div>
             <div class="form-floating">
                 <input asp-for="Input.FName" class="form-control" />
@@ -111,6 +112,7 @@
             <div class="form-floating">
                 <input asp-for="Input.MonthlyWages" class="form-control" />
                 <label asp-for="Input.MonthlyWages" class="form-label"></label>
+                <span asp-validation-for="Input.MonthlyWages" class="text-danger"></span>
             </div>
             <div class="form-floating">
                 <input asp-for="Input.ReferredBy" class="form-control" />
@@ -154,4 +156,5 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -75,9 +75,9 @@ namespace SOS_Resources.Areas.Identity.Pages.Account
 
 
             [Required]
-            [StringLength(6)]
             [DataType(DataType.Text)]
             [Display(Name = "Hendrix ID*")]
+            [RegularExpression(@"[0-9]{5,6}")]
             public string HendrixID { get; set; }
 
             [Required]

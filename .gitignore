@@ -1,6 +1,9 @@
 ## Ignore build and debug directories
 SOSResources/obj/
 SOSResources/bin/
+SOS_Resources/obj/
+SOS_Resources/bin/
+
 
 # OS generated files # from https://gist.github.com/octocat/9257657
 ######################
