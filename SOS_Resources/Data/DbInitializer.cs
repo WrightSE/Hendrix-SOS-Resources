@@ -158,6 +158,102 @@ namespace SOS_Resources.Data
             };
 
             context.TextbookRequests.AddRange(textbookRequests);
+
+            var firstaid = new ResourceType
+            {
+                Name = "First Aid Supplies"
+            };
+            var hygiene = new ResourceType
+            {
+                Name = "Hygiene Supplies"
+            };
+            var med = new ResourceType
+            {
+                Name = "Over-the-counter Medications"
+            };
+            var personal = new ResourceType
+            {
+                Name = "Personal Care Supplies"
+            };
+
+            var resourceTypes = new ResourceType[]
+            {
+                firstaid,
+                hygiene,
+                med,
+                personal
+            };
+                
+            context.ResourceTypes.AddRange(resourceTypes);
+
+                
+            var sanitizer = new Resource
+            {
+                Name = "Hand Sanitizer",
+                Type = hygiene,
+                Quantity = 20,
+                Available = true
+            };
+
+            var toothbrush = new Resource
+            {
+                Name = "Toothbrush",
+                Type = hygiene,
+                Quantity = 37,
+                Available = true
+            };
+
+            var detergent = new Resource
+            {
+                Name = "Detergent",
+                Type = personal,
+                Quantity = 5,
+                Available = true
+            };
+
+             var bandaids = new Resource
+            {
+                Name = "Bandaids",
+                Type = firstaid,
+                Quantity = 7,
+                Available = true
+            };
+
+            var gauze = new Resource
+            {
+                Name = "Gauze",
+                Type = firstaid,
+                Quantity = 3,
+                Available = true
+            };
+
+             var antacids = new Resource
+            {
+                Name = "Antacids",
+                Type = med,
+                Available = true
+            };
+
+            var resources = new Resource[]{
+                sanitizer,
+                toothbrush,
+                detergent,
+                bandaids,
+                antacids
+            };
+            context.Resources.AddRange(resources);
+
+            var req = new ResourceRequest{
+                Requester = test,
+                RequestDate = DateTime.Parse("2023-09-10"),
+                Resources = new List<Resource> { antacids, bandaids}
+            };
+
+            var rrs = new ResourceRequest[]{
+                req
+            };
+            context.ResourceRequests.AddRange(rrs);
+
             context.SaveChanges();
         }
     }
