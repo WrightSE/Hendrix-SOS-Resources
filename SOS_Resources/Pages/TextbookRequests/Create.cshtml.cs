@@ -76,17 +76,23 @@ namespace SOS_Resources.Pages.TextbookRequests
             Participant participant;
             if (SOSUser.Participant == null)
             {
-                participant = new Participant()
-                {
-                    SOS_User = SOSUser,
-                };
+                var parts = _context.Participants.Where(p => p.SOS_User.Equals(SOSUser));
+                if (parts.IsNullOrEmpty()){
+                    participant = new Participant()
+                    {
+                        SOS_User = SOSUser,
+                    };
+                    _context.Participants.Add(participant);
+                } else {
+                    SOSUser.Participant = parts.ToList()[0];
+                    participant = SOSUser.Participant;
+                }
             }
             else
             {
                 participant = SOSUser.Participant;
             }
-            _context.Participants.Add(participant);
-            await _context.SaveChangesAsync();
+            
 
             var tbRequest = new TextbookRequest(){
                 RequestDate = DateTime.Now,
