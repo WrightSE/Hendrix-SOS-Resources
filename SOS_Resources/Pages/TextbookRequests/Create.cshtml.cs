@@ -23,6 +23,7 @@ namespace SOS_Resources.Pages.TextbookRequests
         {
             _context = context;
         }
+        
 
         public Textbook Textbook;
         public Copy Copy;
@@ -30,7 +31,7 @@ namespace SOS_Resources.Pages.TextbookRequests
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            var textbookID = id;
+            var textbookID = (int)id;
             if (!(textbookID == null || _context.Textbooks == null))
             {
                 var textbook = await _context.Textbooks
@@ -49,8 +50,6 @@ namespace SOS_Resources.Pages.TextbookRequests
                             SOSUser = user;
                             return Page();
                         }
-                        
-                        
                     }
                 }
             }
@@ -58,15 +57,16 @@ namespace SOS_Resources.Pages.TextbookRequests
         }
 
         public TextbookRequest TextbookRequest { get; set; }
-        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int textbookID, int copyID)
         {
           if (!ModelState.IsValid)
             {
                 return Page();
             }
+            var tb = await _context.Textbooks.FindAsync(textbookID);
+            var copy = await _context.Copies.FindAsync(copyID);
 
             SOSUser = await _context.GetService<UserManager<SOS_User>>().GetUserAsync(User);
             if (SOSUser == null)
@@ -74,38 +74,44 @@ namespace SOS_Resources.Pages.TextbookRequests
                 return Page();
             }
             Participant participant;
-            if (SOSUser.Participant == null)
-            {
-                var parts = _context.Participants.Where(p => p.SOS_User.Equals(SOSUser));
-                if (parts.IsNullOrEmpty()){
-                    participant = new Participant()
-                    {
-                        SOS_User = SOSUser,
-                    };
-                    _context.Participants.Add(participant);
-                } else {
-                    SOSUser.Participant = parts.ToList()[0];
-                    participant = SOSUser.Participant;
-                }
-            }
-            else
-            {
-                participant = SOSUser.Participant;
-            }
+
+            // if (SOSUser.Participant == null)
+            // {
+            //     var parts = _context.Participants.Where(p => p.SOS_UserId.Equals(SOSUser.Id));
+            //     if (parts.IsNullOrEmpty()){
+            //         participant = new Participant()
+            //         {
+            //             SOS_UserId = SOSUser.Id
+            //         };
+            //         participant.SOS_User = SOSUser;
+            //         _context.Participants.Add(participant);
+                    
+            //     } else {
+            //         SOSUser.Participant = parts.ToList()[0];
+            //         participant = SOSUser.Participant;
+            //     }
+            // }
+            // else
+            // {
+            //     participant = SOSUser.Participant;
+            // }
             
+            participant = await _context.Participants.FindAsync(SOSUser.Id);
+            if (participant == null){
+                return Page();
+            }
 
             var tbRequest = new TextbookRequest(){
-                RequestDate = DateTime.Now,
                 Requester = participant,
-                copy = Copy,
+                copy = copy,
+                RequestDate = DateTime.Now,
                 Active = true
             };
-            
 
-            _context.TextbookRequests.Add(tbRequest);
+            await _context.TextbookRequests.AddAsync(tbRequest);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Textbooks/SelectBook");
         }
     }
 }

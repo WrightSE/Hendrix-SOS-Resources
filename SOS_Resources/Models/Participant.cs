@@ -9,8 +9,7 @@ namespace SOS_Resources.Models
 {
     public class Participant
     {
-        public int ID { get; set; }
-
+        [Key]
         public string SOS_UserId { get; set;}
         [Required]
         public SOS_User SOS_User { get; set;}

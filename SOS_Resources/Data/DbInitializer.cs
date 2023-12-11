@@ -62,7 +62,7 @@ namespace SOS_Resources.Data
 
             user.Participant = test;
 
-            context.Participants.AddRange(test);
+            context.Participants.Add(test);
 
 
             var gebusi = new Textbook

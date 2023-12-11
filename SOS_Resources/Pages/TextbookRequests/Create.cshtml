@@ -30,7 +30,7 @@
         @Html.DisplayFor(model => model.Textbook.Edition)
     </dd>
     <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Copy.ID)
+        Copy ID@* @Html.DisplayNameFor(model => model.Copy.ID) *@
     </dt>
     <dd class="col-sm-10">
         @Html.DisplayFor(model => model.Copy.ID)
@@ -41,6 +41,8 @@
 <p>@Model.SOSUser.DisplayPrefName, do you want to request this textbook?</p>
 
 <form method="post">
+        <input type="hidden" name="textbookID" asp-for="Textbook.ID" />
+        <input type="hidden" name="copyID" asp-for="Copy.ID" />
         <input type="submit" value="Submit Request" class="btn btn-primary" />
 </form>
 
