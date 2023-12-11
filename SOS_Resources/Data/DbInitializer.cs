@@ -31,7 +31,7 @@ namespace SOS_Resources.Data
                 EmergFName = "Mom",
                 EmergLName = "Mother",
                 EmergEmail = "mom@mom.com",
-                EmergRelation = "Dad",
+                EmergRelation = "Father",
                 EmergPhone = "1112223333",
                 Employer = "Boss",
                 EmployerPhone = "1231231234",
@@ -52,7 +52,36 @@ namespace SOS_Resources.Data
             user.EmailConfirmed = true;
             var result = userManager.CreateAsync(user, "Passw0rd!");
 
-            userManager.AddToRoleAsync(user, "Admin");
+            var admin = new SOS_User{
+                FName = "Admin",
+                HendrixID = "222222",
+                LName = "Istrator",
+                Pronouns = "he/him",
+                PrefName = "",
+                Email = "admin@hendrix.edu",
+                PhoneNumber = "1112223333",
+                Class = "2000",
+                CampusAdd = "N/A",
+                CampusEmail = "",
+                EmergFName = "___",
+                EmergLName = "___",
+                EmergEmail = "mom@mom.com",
+                EmergRelation = "___",
+                EmergPhone = "0000000000",
+                Employer = "Hendrix",
+                EmployerPhone = "1231231234",
+                JobPosition = "SOS Administrator",
+                PayType = "Salary",
+                PayFreq = "Monthly",
+                MonthlyWages = 5000,
+
+            };
+            userStore.SetUserNameAsync(admin, "admin@hendrix.edu", CancellationToken.None);
+            emailStore.SetEmailAsync(admin, "admin@hendrix.edu", CancellationToken.None);
+            admin.EmailConfirmed = true;
+            userManager.CreateAsync(admin, "Passw0rd!");
+
+            userManager.AddToRoleAsync(admin, "Admin");
             
             var test = new Participant
             {
@@ -63,13 +92,22 @@ namespace SOS_Resources.Data
             user.Participant = test;
 
             context.Participants.Add(test);
+            
+            var adm = new Participant
+            {
+                SOS_User = admin,
+                SOS_UserId = admin.Id
+            };
+
+            admin.Participant = adm;
+            context.Participants.Add(adm);
 
 
             var gebusi = new Textbook
             {
-                Title = "The Gebusi: Rainforest Living",
+                Title = "The Gebusi: Lives Transformed in a Rainforest World",
                 Author = "Bruce Knauft",
-                Edition = "5th"
+                Edition = "4th"
             };
 
            var caseHealth = new Textbook
