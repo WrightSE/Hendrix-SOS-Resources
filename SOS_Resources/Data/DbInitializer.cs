@@ -54,12 +54,15 @@ namespace SOS_Resources.Data
 
             userManager.AddToRoleAsync(user, "Admin");
             
-            var zach = new Participant
+            var test = new Participant
             {
-                User = user
+                SOS_User = user,
+                SOS_UserId = user.Id
             };
 
-            context.Participants.AddRange(zach);
+            user.Participant = test;
+
+            context.Participants.AddRange(test);
 
 
             var gebusi = new Textbook
@@ -108,7 +111,7 @@ namespace SOS_Resources.Data
 
             var request1 = new TextbookRequest {
                 copy = c2,
-                Requester = zach,
+                Requester = test,
                 Active = true
             };
             var textbookRequests = new TextbookRequest[]

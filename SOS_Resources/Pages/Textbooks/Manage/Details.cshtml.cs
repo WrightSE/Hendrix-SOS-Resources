@@ -32,7 +32,7 @@ namespace SOS_Resources.Pages.Textbooks.Manage
                 .Include(t => t.Copies)
                 .ThenInclude(c => c.textbookRequests)
                 .ThenInclude(r => r.Requester)
-                .ThenInclude(rq => rq.User)
+                .ThenInclude(rq => rq.SOS_User)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (textbook == null)
             {

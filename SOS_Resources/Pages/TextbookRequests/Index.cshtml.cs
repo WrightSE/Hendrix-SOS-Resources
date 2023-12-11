@@ -25,7 +25,7 @@ namespace SOS_Resources.Pages.TextbookRequests
         {
             if (_context.TextbookRequests != null)
             {
-                TextbookRequest = await _context.TextbookRequests.Include(r => r.Requester).ThenInclude(rq => rq.User).ToListAsync();
+                TextbookRequest = await _context.TextbookRequests.Include(r => r.Requester).ThenInclude(rq => rq.SOS_User).ToListAsync();
             }
         }
     }

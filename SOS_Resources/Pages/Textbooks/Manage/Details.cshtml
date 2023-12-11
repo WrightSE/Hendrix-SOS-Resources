@@ -54,7 +54,7 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => request.Requester.User.DisplayName)
+                                            @Html.DisplayFor(modelItem => request.Requester.SOS_User.DisplayFullName)
                                         </td>
                                         <td>
                                              <a asp-page="/TextbookRequests/Details" asp-route-id="@request.ID">Request Details</a>

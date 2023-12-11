@@ -20,7 +20,7 @@ namespace SOS_Resources.Pages.TextbookRequests
         }
 
         [BindProperty]
-      public TextbookRequest TextbookRequest { get; set; }
+        public TextbookRequest TextbookRequest { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

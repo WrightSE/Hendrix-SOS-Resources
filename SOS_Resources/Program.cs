@@ -4,6 +4,7 @@ using SOS_Resources.Data;
 using SOS_Resources.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AuthorizeFolder("/Textbooks/Manage", "IsAdmin");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Index");
     options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
+    //options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
 
 
     options.Conventions.AllowAnonymousToPage("/Error");
@@ -102,7 +104,7 @@ using (var scope = app.Services.CreateScope())
 
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
-
+    
     //var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW");
     //await SeedData.Initialize(services, testUserPw);
     var roleManager = services.GetService<RoleManager<IdentityRole>>();

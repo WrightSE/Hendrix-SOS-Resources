@@ -11,8 +11,9 @@ namespace SOS_Resources.Models
     {
         public int ID { get; set; }
 
+        public string SOS_UserId { get; set;}
         [Required]
-        public SOS_User User { get; set;}
+        public SOS_User SOS_User { get; set;}
         
 
         public ICollection<ResourceRequest>? ResourceRequests { get; set; }

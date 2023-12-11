@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using SOS_Resources.Models;
 
 namespace SOS_Resources.Areas.Identity.Data;
 
@@ -20,7 +21,7 @@ public class SOS_User : IdentityUser
     [PersonalData]
     public string? PrefName { get; set; }
     
-    public string DisplayName
+    public string DisplayFullName
     {
         get
         {
@@ -28,6 +29,17 @@ public class SOS_User : IdentityUser
                 return PrefName +" "+ LName;
             } else {
                 return FName +" "+ LName;
+            }
+        }
+    }
+    public string DisplayPrefName
+    {
+        get
+        {
+            if (!String.IsNullOrEmpty(PrefName)){
+                return PrefName;
+            } else {
+                return FName;
             }
         }
     }
@@ -69,5 +81,7 @@ public class SOS_User : IdentityUser
 
     [PersonalData]
     public string? ReferredBy { get; set; }
+
+    public Participant? Participant  { get; set; }
 
 }

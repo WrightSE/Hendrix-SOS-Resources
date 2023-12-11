@@ -13,7 +13,6 @@ namespace SOS_Resources.Models
         [StringLength(55, MinimumLength = 3)]
         public string Name { get; set; }
 
-        public ICollection<Resource> Resources { get; set;}
+        public ICollection<Resource>? Resources { get; set;}
     }
-
 }
