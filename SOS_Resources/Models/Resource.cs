@@ -14,18 +14,17 @@ namespace SOS_Resources.Models
         public string Name { get; set; }
         public int TypeID { get; set; }
 
-
         public ResourceType Type { get; set; }
 
       
 
         [StringLength(250)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public int? Quantity { get; set; }
 
         public bool Available { get; set;}
 
-        public ICollection<ResourceRequest> ResourceRequests { get; set; }
+        public ICollection<ResourceRequest>? ResourceRequests { get; set; }
     }
 }

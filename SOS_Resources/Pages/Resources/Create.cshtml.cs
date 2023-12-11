@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SOS_Resources.Data;
 using SOS_Resources.Models;
 
@@ -32,16 +33,17 @@ namespace SOS_Resources.Pages.Resources
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
-            {
-                PopulateTypesDropdownList(_context);
-                return Page();
+            Resource.Type = _context.ResourceTypes.Find(Resource.TypeID);
+            try {
+                _context.Resources.Add(Resource);
+                await _context.SaveChangesAsync();
+
+                return RedirectToPage("./Index");
+            } catch {
+
             }
-
-            _context.Resources.Add(Resource);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            PopulateTypesDropdownList(_context);
+            return Page();
         }
     }
 }

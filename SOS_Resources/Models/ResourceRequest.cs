@@ -19,6 +19,6 @@ namespace SOS_Resources.Models
         [Required]
         public ICollection<Resource> Resources { get; set; }
 
-        public string Comment {get; set;}
+        public string? Comment {get; set;}
     }
 }

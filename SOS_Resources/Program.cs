@@ -38,6 +38,8 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AuthorizePage("/TextbookRequests/Edit", "IsAdmin");
     options.Conventions.AuthorizePage("/TextbookRequests/Delete", "IsAdmin");
     // Resource pages
+    options.Conventions.AllowAnonymousToPage("/Resources/Index");
+    options.Conventions.AllowAnonymousToPage("/Resources/Details");
 
 
     options.Conventions.AuthorizeFolder("/Admin", "IsAdmin");
