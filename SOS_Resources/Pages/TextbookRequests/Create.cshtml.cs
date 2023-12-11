@@ -67,6 +67,7 @@ namespace SOS_Resources.Pages.TextbookRequests
             }
             var tb = await _context.Textbooks.FindAsync(textbookID);
             var copy = await _context.Copies.FindAsync(copyID);
+            copy.CheckedOut = true;
 
             SOSUser = await _context.GetService<UserManager<SOS_User>>().GetUserAsync(User);
             if (SOSUser == null)

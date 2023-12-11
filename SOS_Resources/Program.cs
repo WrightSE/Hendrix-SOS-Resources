@@ -21,7 +21,7 @@ builder.Services.AddRazorPages(options =>
 {
     // Authorization:
 
-    //User pages
+    // User pages
     options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
     options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/Login");
     options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/Register");
@@ -33,6 +33,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
     //options.Conventions.AllowAnonymousToPage("/Textbooks/Details");
 
+    // Resource pages
 
     options.Conventions.AllowAnonymousToPage("/Error");
     //options.Conventions.AllowAnonymousToAreaFolder("Public", "/");

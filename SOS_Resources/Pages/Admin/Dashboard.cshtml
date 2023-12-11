@@ -1,0 +1,17 @@
+@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>Admin Dashboard</h1>
+
+<h3>Manage Listings</h3>
+<ul>
+    <li><a asp-page="/Textbooks/Manage/Index">Manage Textbooks</a></li>
+    <li><a asp-page="/Textbooks/Manage/Index">Manage Resources</a></li>
+</ul>
+<h3>Manage Requests</h3>
+<ul>
+    <li><a asp-page="/TextbooksRequests/Index">Manage Textbook Requests</a></li>
+    <li><a asp-page="/ResourceRequests/Index">Manage Resource Requests</a></li>
+</ul>
