@@ -20,7 +20,7 @@ namespace SOS_Resources.Models
       
 
         [StringLength(250)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public int? Quantity { get; set; }
 
