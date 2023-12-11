@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NuGet.Protocol.Plugins;
 
 namespace SOSResources.Models
 {
@@ -11,16 +12,20 @@ namespace SOSResources.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+        public int TypeID { get; set; }
 
-        [Required]
-        [Display(Name = "Type")]
-        [StringLength(30)]
-        public string Type { get; set; }
+
+        public ResourceType Type { get; set; }
+
+      
 
         [StringLength(250)]
         public string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
+
+        public bool Available { get; set;}
+
         public ICollection<ResourceRequest> ResourceRequests { get; set; }
     }
 }

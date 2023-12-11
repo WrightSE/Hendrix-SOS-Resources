@@ -1,0 +1,149 @@
+@page
+@model SOSResources.Pages.Resources.IndexModel
+
+@{
+    ViewData["Title"] = "Resources";
+}
+
+<h1>Resources</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+
+    <a asp-page="/ResourceTypes/Index">Edit Types</a>
+</p>
+
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Name:
+            <input type="text" name="SearchString" value="@Model.NameFilter" />
+            Type:
+            <select name="typeString" value="@Model.TypeFilter" 
+                    asp-items="Model.TypeNameSL">
+                <option value="">Search by type</option>
+            </select>
+            <input type="submit" value="Search" class="btn btn-primary" /> 
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                   asp-route-nameFilter="@Model.NameFilter"
+                   asp-route-typeFilter="@Model.TypeFilter">
+                    @Html.DisplayNameFor(model => model.Resources[0].Name)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TypeSort">
+                    @Html.DisplayNameFor(model => model.Resources[0].Type)
+                </a>
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Resources[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resources[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resources[0].Available)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Resources) {
+        string availability = "";
+        if (item.Available != true){   
+                availability = "table-secondary";
+            }
+        <tr class="@availability">
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div style="text-align: center">Page @Model.Resources.PageIndex of @Model.Resources.TotalPages</div>
+@{
+    var prevDisabled = !Model.Resources.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Resources.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="@(Model.Resources.PageIndex - 1)"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="@Model.Resources.PageSize"
+    class="btn btn-primary @prevDisabled">
+     Previous
+</a>
+<a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="@(Model.Resources.PageIndex + 1)"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="@Model.Resources.PageSize"
+    class="btn btn-primary @nextDisabled">
+     Next
+</a>
+
+<div>
+    <p>Resources per page:
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="10">
+    10</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="25">
+    25</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="50">
+    50</a>
+    <a asp-page="./Index"
+    asp-route-sortOrder="@Model.CurrentSort"
+    asp-route-pageIndex="1"
+    asp-route-nameFilter="@Model.NameFilter"
+    asp-route-typeFilter="@Model.TypeFilter"
+    asp-route-pageSize="-1">
+    All</a>
+    </p>
+</div>
